@@ -1,0 +1,39 @@
+{
+    "name": "kinedu/cfdi-pac",
+    "description": "",
+    "homepage": "https://github.com/Kinedu/cfdi-pac",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "Kinedu",
+        "cfdi",
+        "sat",
+        "pac"
+    ],
+    "authors": [
+        {
+            "name": "Orlando Charles",
+            "email": "orlando@kinedu.com",
+            "homepage": "https://orlandocharles.com/",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kinedu\\CfdiPac\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kinedu\\CfdiPac\\Tests\\": "tests"
+        }
+    },
+    "prefer-stable": true
+}
