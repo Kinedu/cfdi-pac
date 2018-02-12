@@ -70,7 +70,7 @@ class PAC
      */
     public function __call(string $method, array $arguments)
     {
-        $prefix = 'pac';
+        $prefix = 'use';
 
         if ((substr($method, 0, 3) === $prefix)) {
             $name = substr($method, strlen($prefix));

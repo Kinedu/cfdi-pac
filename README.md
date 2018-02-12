@@ -23,7 +23,7 @@ $xml      = file_get_contents('./K279101.xml');
 $isTest   = true;
 
 $pac = new PAC($username, $password, $xml, $isTest);
-$pac->pacInvoiceOne()
+$pac->useInvoiceOne()
     ->save('./cfdi/K279101.xml');
 ```
 
@@ -31,7 +31,7 @@ Proveedores Autorizados disponibles:
 
 PAC          | Método
 ------------ | -----------------
-Invoice One  | `pacInvoiceOne()`
+Invoice One  | `useInvoiceOne()`
 
 ## Licencia
 
