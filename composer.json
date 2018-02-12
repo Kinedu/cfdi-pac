@@ -1,6 +1,6 @@
 {
     "name": "kinedu/cfdi-pac",
-    "description": "",
+    "description": "Librería para timbrar un CFDI con algún Proveedor Autorizado de Certificación (PAC)",
     "homepage": "https://github.com/Kinedu/cfdi-pac",
     "type": "library",
     "license": "MIT",
