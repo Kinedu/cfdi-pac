@@ -84,7 +84,6 @@ class PAC
                 );
 
                 return $p;
-
             } else {
                 throw new Exception("This method doesn't exist");
             }
