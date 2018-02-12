@@ -65,8 +65,18 @@ abstract class PACSoapRequest
         return $this;
     }
 
+    /**
+     * Soap request.
+     *
+     * @return mixed
+     */
     abstract protected function makeRequest();
 
+    /**
+     * Returns the cfdi with the TFD node.
+     *
+     * @return string
+     */
     abstract public function getXML();
 
     /**

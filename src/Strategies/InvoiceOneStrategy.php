@@ -17,33 +17,49 @@ use SoapClient;
 class InvoiceOneStrategy extends PACSoapRequest
 {
     /**
+     * Invoice one endpoint
+     *
      * @var string
      */
     const WSDL_ENDPOINT = 'https://invoiceone.mx/TimbreCFDI/timbrecfdi.asmx?WSDL';
 
     /**
+     * Invoice One Soap request.
+     *
      * @return stdClass
      */
     protected function makeRequest()
     {
         $client = new SoapClient(static::WSDL_ENDPOINT, $this->options);
 
-        if ($this->test) {
-            return $client->ObtenerCFDIPrueba([
-                'usuario' => $this->username,
-                'contrasena' => $this->password,
-                'xmlComprobante' => $this->xml,
-            ]);
-        }
+        return $client->{$this->getMethodName()}([
+            'usuario' => $this->username,
+            'contrasena' => $this->password,
+            'xmlComprobante' => $this->xml,
+        ]);
     }
 
     /**
+     * Returns the cfdi with the TFD node.
+     *
      * @return string
      */
     public function getXML() : string
     {
         $request = $this->makeRequest();
 
-        return $request->ObtenerCFDIPruebaResult->Xml;
+        $resultName = $this->getMethodName().'Result';
+
+        return $request->{$resultName}->Xml;
+    }
+
+    /**
+     * Soap method name.
+     *
+     * @return string
+     */
+    protected function getMethodName()
+    {
+        return ($this->test) ? 'ObtenerCFDIPrueba' : 'ObtenerCFDI';
     }
 }
