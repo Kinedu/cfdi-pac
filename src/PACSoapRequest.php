@@ -11,6 +11,8 @@
 
 namespace Kinedu\CfdiPac;
 
+use DOMDocument;
+
 abstract class PACSoapRequest
 {
     /**
@@ -81,9 +83,16 @@ abstract class PACSoapRequest
 
     /**
      * @param string $filename
+     *
+     * @return integer
      */
     public function save(string $filename)
     {
-        return file_put_contents($filename, $this->getXML());
+        $xml = new DOMDocument();
+        $xml->preserveWhiteSpace = true;
+        $xml->formatOutput = true;
+        $xml->loadXML($this->getXML());
+
+        return $xml->save($filename);
     }
 }
