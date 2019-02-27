@@ -20,12 +20,12 @@ use Kinedu\CfdiPac\PAC;
 
 $username = 'Kinedu';
 $password = '123456789A';
-$xml      = file_get_contents('./K279101.xml');
-$isTest   = true;
+$xml = file_get_contents('./K279101.xml');
+$isTest = true;
 
 $pac = new PAC($username, $password, $xml, $isTest);
-$pac->useInvoiceOne()
-    ->save('./cfdi/K279101.xml');
+
+$pac->useInvoiceOne()->save('./cfdi/K279101.xml');
 ```
 
 Proveedores Autorizados disponibles:

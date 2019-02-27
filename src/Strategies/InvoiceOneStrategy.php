@@ -11,8 +11,8 @@
 
 namespace Kinedu\CfdiPac\Strategies;
 
-use Kinedu\CfdiPac\PACSoapRequest;
 use SoapClient;
+use Kinedu\CfdiPac\PACSoapRequest;
 
 class InvoiceOneStrategy extends PACSoapRequest
 {
@@ -44,7 +44,7 @@ class InvoiceOneStrategy extends PACSoapRequest
      *
      * @return string
      */
-    public function getXML() : string
+    public function getXML(): string
     {
         $request = $this->makeRequest();
 
@@ -58,7 +58,7 @@ class InvoiceOneStrategy extends PACSoapRequest
      *
      * @return string
      */
-    protected function getMethodName()
+    protected function getMethodName(): string
     {
         return ($this->test) ? 'ObtenerCFDIPrueba' : 'ObtenerCFDI';
     }
