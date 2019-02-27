@@ -41,9 +41,7 @@ abstract class PACSoapRequest
      */
     protected $test;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $options = [
         'soap_version' => SOAP_1_2,
         'trace' => 1,
@@ -52,10 +50,10 @@ abstract class PACSoapRequest
     /**
      * Create a new invoice one strategy instance.
      *
-     * @param string $username
-     * @param string $password
-     * @param string $xml
-     * @param bool $test
+     * @param  string  $username
+     * @param  string  $password
+     * @param  string  $xml
+     * @param  bool  $test
      */
     public function __construct(string $username, string $password, string $xml, bool $test = false)
     {

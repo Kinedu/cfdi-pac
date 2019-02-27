@@ -51,10 +51,10 @@ class PAC
     /**
      * Create a new pac instance.
      *
-     * @param string $username
-     * @param string $password
-     * @param string $xml
-     * @param bool $test
+     * @param  string  $username
+     * @param  string  $password
+     * @param  string  $xml
+     * @param  bool  $test
      */
     public function __construct(string $username, string $password, string $xml, bool $test = false)
     {
@@ -65,8 +65,8 @@ class PAC
     }
 
     /**
-     * @param string $method
-     * @param string $arguments
+     * @param  string  $method
+     * @param  string  $arguments
      */
     public function __call(string $method, array $arguments)
     {
